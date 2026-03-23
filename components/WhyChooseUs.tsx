@@ -1,4 +1,7 @@
+'use client'
+
 import { CheckCircle2, Users, Clock, Award } from 'lucide-react'
+import MotionWrapper, { StaggerContainer, StaggerItem } from './MotionWrapper'
 
 const reasons = [
   {
@@ -29,7 +32,7 @@ export default function WhyChooseUs() {
       <div className="container-custom mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="text-center lg:text-left">
+          <MotionWrapper animation="fadeRight" className="text-center lg:text-left">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 mb-6">
               Your Trusted Partner for Digital Success
@@ -39,25 +42,27 @@ export default function WhyChooseUs() {
               web solutions that make a real impact on your business.
             </p>
             
-            <div className="space-y-5 sm:space-y-6">
+            <StaggerContainer className="space-y-5 sm:space-y-6" staggerDelay={0.15}>
               {reasons.map((reason, index) => (
-                <div key={index} className="flex gap-3 sm:gap-4 text-left">
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                      <reason.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                <StaggerItem key={index}>
+                  <div className="flex gap-3 sm:gap-4 text-left">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                        <reason.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{reason.title}</h3>
+                      <p className="text-gray-400 text-sm sm:text-base">{reason.description}</p>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{reason.title}</h3>
-                    <p className="text-gray-400 text-sm sm:text-base">{reason.description}</p>
-                  </div>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
-          </div>
+            </StaggerContainer>
+          </MotionWrapper>
 
           {/* Right Content - Visual Element */}
-          <div className="relative mt-8 lg:mt-0">
+          <MotionWrapper animation="fadeLeft" delay={0.2} className="relative mt-8 lg:mt-0">
             <div className="aspect-square max-w-sm mx-auto lg:max-w-none bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-6 sm:p-8 flex items-center justify-center">
               <div className="text-center">
                 <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
@@ -70,7 +75,7 @@ export default function WhyChooseUs() {
             {/* Decorative elements - hidden on mobile */}
             <div className="hidden sm:block absolute -top-4 -right-4 w-24 h-24 bg-primary/30 rounded-full blur-2xl" />
             <div className="hidden sm:block absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/30 rounded-full blur-2xl" />
-          </div>
+          </MotionWrapper>
         </div>
       </div>
     </section>

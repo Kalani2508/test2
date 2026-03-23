@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Sparkles } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 declare global {
   interface Window {
@@ -69,33 +70,53 @@ export default function Hero() {
         <div className="container-custom mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-8"
+          >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Creating Digital Excellence</span>
-          </div>
+          </motion.div>
 
           {/* Main Heading */}
-          <h1 className="heading-1 mb-6">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="heading-1 mb-6"
+          >
             We Build{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Exceptional
             </span>{' '}
             Digital Experiences
-          </h1>
+          </motion.h1>
 
           {/* Subheading */}
-          <p className="text-body max-w-2xl mx-auto mb-10">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-body max-w-2xl mx-auto mb-10"
+          >
             Transform your vision into reality with our expert web development services. 
             We create stunning, high-performance websites that drive results and elevate your brand.
-          </p>
+          </motion.p>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex justify-center"
+          >
             <Link href="/contact" className="btn-primary inline-flex items-center justify-center gap-2">
               Start Your Project
               <ArrowRight className="w-5 h-5" />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,4 +1,7 @@
+'use client'
+
 import { Globe, Palette, ShoppingCart, Smartphone, Zap, Shield } from 'lucide-react'
+import MotionWrapper, { StaggerContainer, StaggerItem } from './MotionWrapper'
 
 const services = [
   {
@@ -38,7 +41,7 @@ export default function Services() {
     <section className="section-padding bg-white" id="services">
       <div className="container-custom mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <MotionWrapper animation="fadeUp" className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Services</span>
           <h2 className="heading-2 mt-4 mb-6">
             Everything You Need to Succeed Online
@@ -47,23 +50,22 @@ export default function Services() {
             We offer comprehensive web development services tailored to your unique needs. 
             From concept to launch and beyond, we&apos;re your trusted digital partner.
           </p>
-        </div>
+        </MotionWrapper>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="group p-8 rounded-2xl bg-light hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
+            <StaggerItem key={index}>
+              <div className="group p-8 rounded-2xl bg-light hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
+                </div>
+                <h3 className="heading-3 mb-4">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
               </div>
-              <h3 className="heading-3 mb-4">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

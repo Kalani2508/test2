@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 declare global {
   interface Window {
@@ -73,16 +74,33 @@ export default function PageHero({ badge, title, highlight, description }: PageH
     <section ref={heroRef} className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="container-custom mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">{badge}</span>
-          <h1 className="heading-1 mt-4 mb-6">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-primary font-semibold text-sm uppercase tracking-wider inline-block"
+          >
+            {badge}
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="heading-1 mt-4 mb-6"
+          >
             {title}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               {highlight}
             </span>
-          </h1>
-          <p className="text-body max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-body max-w-2xl mx-auto"
+          >
             {description}
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
