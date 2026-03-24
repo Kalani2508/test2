@@ -36,7 +36,8 @@ const footerLinks = {
   company: [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Us' },
-    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/portfolio', label: 'Projects' },
+    { href: '/free-website', label: 'Free Website' },
     { href: '/contact', label: 'Contact Us' },
   ],
   services: [

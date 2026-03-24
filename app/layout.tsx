@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import FreeWebsitePopup from '@/components/FreeWebsitePopup'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://pixelsurge.com'
 
@@ -72,6 +73,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FreeWebsitePopup />
       </body>
     </html>
   )

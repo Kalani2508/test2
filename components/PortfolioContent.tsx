@@ -6,51 +6,51 @@ import MotionWrapper, { StaggerContainer, StaggerItem } from './MotionWrapper'
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    category: 'E-commerce',
-    description: 'A modern online store with seamless checkout experience, inventory management, and customer analytics dashboard.',
+    title: 'E-Commerce Platforms',
+    category: 'We Can Build',
+    description: 'We can create modern online stores with seamless checkout, inventory management, payment integration, and customer analytics.',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-    link: '#',
+    link: '/contact',
   },
   {
     id: 2,
-    title: 'Corporate Website',
-    category: 'Web Development',
-    description: 'Professional corporate website with modern design, optimized for conversions and search engines.',
+    title: 'Corporate Websites',
+    category: 'We Can Build',
+    description: 'We design professional corporate websites with modern aesthetics, optimized for conversions and search engine visibility.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-    link: '#',
+    link: '/contact',
   },
   {
     id: 3,
-    title: 'Restaurant Booking App',
-    category: 'Web Application',
-    description: 'Online reservation system with real-time availability, table management, and customer notifications.',
+    title: 'Booking Systems',
+    category: 'We Can Build',
+    description: 'We develop online reservation systems with real-time availability, scheduling, and automated customer notifications.',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
-    link: '#',
+    link: '/contact',
   },
   {
     id: 4,
-    title: 'Real Estate Platform',
-    category: 'Web Development',
-    description: 'Property listing website with advanced search filters, virtual tours, and agent dashboard.',
+    title: 'Real Estate Platforms',
+    category: 'We Can Build',
+    description: 'We build property listing websites with advanced search filters, virtual tours, maps integration, and agent dashboards.',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
-    link: '#',
+    link: '/contact',
   },
   {
     id: 5,
-    title: 'Healthcare Portal',
-    category: 'Web Application',
-    description: 'Patient management system with appointment booking, medical records, and telemedicine features.',
+    title: 'Business Portals',
+    category: 'We Can Build',
+    description: 'We create custom business portals with user management, dashboards, reporting, and workflow automation features.',
     image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80',
-    link: '#',
+    link: '/contact',
   },
   {
     id: 6,
-    title: 'Educational Platform',
-    category: 'E-commerce',
-    description: 'Online learning platform with course management, video streaming, and progress tracking.',
+    title: 'Learning Platforms',
+    category: 'We Can Build',
+    description: 'We develop online learning platforms with course management, video streaming, quizzes, and progress tracking.',
     image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
-    link: '#',
+    link: '/contact',
   },
 ]
 
@@ -73,10 +73,10 @@ export default function PortfolioContent() {
           ))}
         </StaggerContainer>
 
-        {/* Load More */}
+        {/* CTA */}
         <MotionWrapper animation="fadeUp" delay={0.5} className="text-center mt-12">
-          <p className="text-gray-500">
-            More projects coming soon...
+          <p className="text-gray-600 text-lg">
+            Have a different project in mind? <a href="/contact" className="text-primary font-semibold hover:underline">Let&apos;s discuss your ideas</a>
           </p>
         </MotionWrapper>
       </div>

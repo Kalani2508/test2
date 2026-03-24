@@ -5,10 +5,17 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
-const navLinks = [
+interface NavLink {
+  href: string
+  label: string
+  highlight?: boolean
+}
+
+const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/portfolio', label: 'Projects' },
+  { href: '/free-website', label: 'Free Website', highlight: true },
   { href: '/contact', label: 'Contact Us' },
 ]
 
@@ -37,9 +44,14 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 hover:text-primary font-medium transition-colors duration-300"
+                className={`font-medium transition-colors duration-300 ${
+                  link.highlight 
+                    ? 'text-primary hover:text-primary/80' 
+                    : 'text-gray-600 hover:text-primary'
+                }`}
               >
                 {link.label}
+                {link.highlight && <span className="ml-1 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">Free</span>}
               </Link>
             ))}
             <Link href="/contact" className="btn-primary">
@@ -65,10 +77,15 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-600 hover:text-primary font-medium transition-colors duration-300 py-2"
+                  className={`font-medium transition-colors duration-300 py-2 ${
+                    link.highlight 
+                      ? 'text-primary' 
+                      : 'text-gray-600 hover:text-primary'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
+                  {link.highlight && <span className="ml-2 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">Free</span>}
                 </Link>
               ))}
               <Link

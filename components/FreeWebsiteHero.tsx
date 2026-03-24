@@ -2,14 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-interface PageHeroProps {
-  badge: string
-  title: string
-  highlight: string
-  description: string
-}
-
-export default function PageHero({ badge, title, highlight, description }: PageHeroProps) {
+export default function FreeWebsiteHero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-light">
       <div className="container-custom mx-auto px-4 md:px-8 relative z-10">
@@ -18,19 +11,20 @@ export default function PageHero({ badge, title, highlight, description }: PageH
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-primary font-semibold text-sm uppercase tracking-wider inline-block"
+            className="inline-block bg-red-100 text-red-600 font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full"
           >
-            {badge}
+            Limited Time Offer
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="heading-1 mt-4 mb-6"
+            className="heading-1 mt-6 mb-6"
           >
-            {title}{' '}
+            Get Your{' '}
+            <span className="text-red-500">Free</span>{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              {highlight}
+              Single-Page Website
             </span>
           </motion.h1>
           <motion.p
@@ -39,7 +33,8 @@ export default function PageHero({ badge, title, highlight, description }: PageH
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-body max-w-2xl mx-auto"
           >
-            {description}
+            Experience our quality firsthand with a completely free, professionally designed 
+            single-page website. No strings attached – let our work speak for itself.
           </motion.p>
         </div>
       </div>
