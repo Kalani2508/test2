@@ -133,6 +133,7 @@ export default function ContactForm() {
             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 bg-white"
           >
             <option value="">Select a subject</option>
+            <option value="Free Website">🎁 Free Website (Limited Offer)</option>
             <option value="Web Development">Web Development</option>
             <option value="UI/UX Design">UI/UX Design</option>
             <option value="E-commerce">E-commerce Solution</option>

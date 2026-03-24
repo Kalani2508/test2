@@ -221,6 +221,10 @@ export default function FreeWebsiteContent() {
                     <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <span className="text-gray-600">Domain and Hosting not included (we can advise)</span>
                   </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-gray-600">E-commerce functionality not included</span>
+                  </li>
                 </ul>
               </div>
             </MotionWrapper>
