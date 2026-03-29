@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import CTA from '@/components/CTA'
 import PageHero from '@/components/PageHero'
+import FeaturedProjects from '@/components/FeaturedProjects'
 import PortfolioContent from '@/components/PortfolioContent'
 
 export const metadata: Metadata = {
@@ -18,13 +19,16 @@ export default function PortfolioPage() {
     <>
       {/* Hero Section */}
       <PageHero
-        badge="What We Build"
-        title="We can create"
-        highlight="any website"
+        badge="Our Projects"
+        title="We will build"
+        highlight="your dream website"
         description="From e-commerce platforms to corporate websites, we have the expertise to bring any web project to life. Here's what we can build for you."
       />
 
-      {/* Portfolio Grid */}
+      {/* Featured Projects */}
+      <FeaturedProjects />
+
+      {/* What We Build Grid */}
       <PortfolioContent />
 
       {/* CTA */}

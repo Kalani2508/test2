@@ -58,6 +58,16 @@ export default function PortfolioContent() {
   return (
     <section className="section-padding bg-white">
       <div className="container-custom mx-auto px-4 md:px-8">
+        {/* Section Header */}
+        <MotionWrapper animation="fadeUp" className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="heading-2 mb-6">What We Build</h2>
+          <p className="text-body">
+            We specialize in building high-quality websites and web applications tailored to your needs. 
+            Whether you need an e-commerce store, corporate website, booking system, real estate platform, 
+            business portal, or learning management system — we&apos;ve got you covered.
+          </p>
+        </MotionWrapper>
+
         {/* Projects Grid */}
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
           {projects.map((project) => (
